@@ -10,6 +10,7 @@ import { Outlet } from 'react-router-dom';
 import { ProfileAvatar } from '@components/common';
 import { Sidebar } from '@components/sidebar';
 import { useAuthedRoute } from '@hooks/useAuth';
+import { DarkMode } from '@components/common/Darkmode';
 
 export function DashboardLayout() {
   useAuthedRoute();
@@ -44,6 +45,7 @@ export function DashboardLayout() {
               />
             </div>
             <Group>
+              <DarkMode />
               <ProfileAvatar />
             </Group>
           </Group>

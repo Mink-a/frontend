@@ -1,4 +1,4 @@
-import { IconAlignBoxBottomCenter, IconHome } from '@tabler/icons';
+import { IconAlignBoxBottomCenter, IconHome, IconMessage } from '@tabler/icons';
 import { DASHBOARD_ROUTE } from './const';
 
 export const menus = [
@@ -16,5 +16,10 @@ export const menus = [
     icon: IconAlignBoxBottomCenter,
     label: 'Pre Orders',
     to: `${DASHBOARD_ROUTE}/pre-orders`,
+  },
+  {
+    icon: IconMessage,
+    label: 'Chat',
+    to: `${DASHBOARD_ROUTE}/chat`,
   },
 ];

@@ -48,7 +48,6 @@ export function DataTable<TData extends Record<string, any> = object>({
         }}
         mantineTableBodyCellProps={{
           fw: 500,
-          sx: { color: '#172B4D' },
         }}
         {...props}
       />

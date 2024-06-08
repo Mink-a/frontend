@@ -12,6 +12,7 @@ import {
 } from '@pages/orders';
 import { DASHBOARD_ROUTE } from './const';
 import { RootLayout } from '../layouts/RootLayout';
+import { ChatPage } from '@pages/chat';
 
 export const router = createBrowserRouter([
   {
@@ -73,6 +74,15 @@ export const router = createBrowserRouter([
               {
                 path: 'edit/:id',
                 element: <OrdersUpdatePage />,
+              },
+            ],
+          },
+          {
+            path: 'chat',
+            children: [
+              {
+                index: true,
+                element: <ChatPage />,
               },
             ],
           },
