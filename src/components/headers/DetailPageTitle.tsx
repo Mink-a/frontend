@@ -11,14 +11,14 @@ type DetailPageTitleProps = {
 export function DetailPageTitle({ title, pageUrl }: DetailPageTitleProps) {
   return (
     <Flex gap="md" align="center" pb="md">
-      <Button
+      {/* <Button
         component={Link}
         to={`${DASHBOARD_ROUTE}/${pageUrl}`}
         variant="subtle"
         leftIcon={<IconArrowLeft />}
       >
         Back
-      </Button>
+      </Button> */}
       <Title order={5} c="primary">
         {title}
       </Title>

@@ -23,3 +23,7 @@ export function formatServerDate(date?: DateType) {
 export function formatAgo(date?: DateType) {
   return dayjs(date).fromNow();
 }
+
+export function tomorrow(date?: DateType) {
+  return dayjs(date).add(1, 'day').format('YYYY-MM-DD');
+}

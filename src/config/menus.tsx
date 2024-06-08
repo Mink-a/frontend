@@ -12,4 +12,9 @@ export const menus = [
     label: 'Orders',
     to: `${DASHBOARD_ROUTE}/orders`,
   },
+  {
+    icon: IconAlignBoxBottomCenter,
+    label: 'Pre Orders',
+    to: `${DASHBOARD_ROUTE}/pre-orders`,
+  },
 ];

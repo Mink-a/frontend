@@ -8,6 +8,7 @@ import {
   OrdersDetailPage,
   OrdersListPage,
   OrdersUpdatePage,
+  PreOrdersListPage,
 } from '@pages/orders';
 import { DASHBOARD_ROUTE } from './const';
 import { RootLayout } from '../layouts/RootLayout';
@@ -39,6 +40,27 @@ export const router = createBrowserRouter([
               {
                 index: true,
                 element: <OrdersListPage />,
+              },
+              {
+                path: 'create',
+                element: <OrdersCreatePage />,
+              },
+              {
+                path: 'detail/:id',
+                element: <OrdersDetailPage />,
+              },
+              {
+                path: 'edit/:id',
+                element: <OrdersUpdatePage />,
+              },
+            ],
+          },
+          {
+            path: 'pre-orders',
+            children: [
+              {
+                index: true,
+                element: <PreOrdersListPage />,
               },
               {
                 path: 'create',

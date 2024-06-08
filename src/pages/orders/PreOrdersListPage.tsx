@@ -10,7 +10,7 @@ import {
 import { useIsMobile } from '@hooks/useIsMobile';
 import { ActionItem } from './components/ActionItems';
 import { Toolbar } from './components/Toolbar';
-import { useGetOrders } from './queries';
+import { useGetOrders, useGetPreOrders } from './queries';
 
 const columns: MRT_ColumnDef<Order>[] = [
   { header: 'Order Number', accessorKey: 'orderNumber' },
@@ -42,9 +42,9 @@ const columns: MRT_ColumnDef<Order>[] = [
   },
 ];
 
-export function OrdersListPage() {
-  const { data, isPending } = useGetOrders();
-  console.log(data?.data);
+export function PreOrdersListPage() {
+  const { data, isPending } = useGetPreOrders();
+
   const isMobile = useIsMobile();
   return (
     <Card

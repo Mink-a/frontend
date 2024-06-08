@@ -6,5 +6,11 @@ declare global {
     price: number;
     quantity: number;
     orderNumber?: string;
+    date?: Date;
+    customerName?: string;
+    customerPhone?: string;
+    customerNotes?: string;
+    isSelfPickup?: boolean;
+    deliveryAddress?: string;
   }
 }

@@ -25,6 +25,12 @@ export function OrdersCreatePage() {
           price: 0,
           quantity: 0,
           orderNumber: '',
+          date: new Date(),
+          customerName: '',
+          customerPhone: '',
+          customerNotes: '',
+          isSelfPickup: false,
+          deliveryAddress: '',
         }}
       />
     </Card>

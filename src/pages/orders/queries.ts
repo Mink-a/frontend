@@ -8,13 +8,25 @@ import {
   getOrders,
   updateOrder,
 } from '@services/orders';
+import { tomorrow } from '@utils/dayjs';
 
 export function useGetOrders() {
   const { search } = useLocation();
-  console.log(search);
   return useQuery({
     queryKey: ordersKeys.list(search),
     queryFn: () => getOrders(search),
+    select: (data) => data?.data,
+  });
+}
+
+export function useGetPreOrders() {
+  const { search } = useLocation();
+  const commingSearch = search
+    ? `${search}&fromDate=${tomorrow()}`
+    : `?fromDate=${tomorrow()}`;
+  return useQuery({
+    queryKey: ordersKeys.list(commingSearch),
+    queryFn: () => getOrders(commingSearch),
     select: (data) => data?.data,
   });
 }

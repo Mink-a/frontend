@@ -16,10 +16,13 @@ export function AnchorCell({ children, onClick }: AnchorCellProps) {
 }
 
 export function longTextCell({ renderedCellValue }: any) {
-  return renderedCellValue.length > 20
-    ? `${renderedCellValue.slice(0, 20)}...`
-    : renderedCellValue;
+  return renderedCellValue?.length > 20
+    ? `${renderedCellValue?.slice(0, 20)}...`
+    : renderedCellValue || '-';
 }
+
+export const renderBooleanCell = ({ renderedCellValue }: any) =>
+  renderedCellValue ? '✅' : '❌';
 
 export const renderArcherCell = ({ renderedCellValue }: any) => (
   <Anchor>{renderedCellValue}</Anchor>

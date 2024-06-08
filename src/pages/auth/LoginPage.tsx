@@ -38,7 +38,7 @@ export function LoginPage() {
         access_token: 'access_token',
         refresh_token: 'refresh_Token',
       },
-      'user_name'
+      values.username
     );
     navigate(DASHBOARD_ROUTE);
   };
