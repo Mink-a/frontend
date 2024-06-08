@@ -1,0 +1,23 @@
+import axios from 'axios';
+
+export async function getOrders(params?: string) {
+  const orders = await axios.get(`orders/${params}`);
+  return orders;
+}
+
+export async function getOrder(id: string) {
+  const transaction = await axios.get(`orders/${id}`);
+  return transaction;
+}
+
+export function createOrder(data: Order) {
+  return axios.post('orders', data);
+}
+
+export function updateOrder(data: Order) {
+  return axios.post('orders', data);
+}
+
+export function deleteOrder(id: string) {
+  return axios.delete(`orders/${id}`);
+}
