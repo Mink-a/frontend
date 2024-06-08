@@ -21,6 +21,7 @@ export function DataTable<TData extends Record<string, any> = object>({
   return (
     <>
       <MantineReactTable
+        initialState={{ density: 'xs' }}
         enablePinning
         enableRowActions={false}
         enableTopToolbar={false}

@@ -30,6 +30,12 @@ export function OrdersUpdatePage() {
           description: data?.data.description,
           price: data?.data.price,
           quantity: data?.data.quantity,
+          date: new Date(data?.data.date),
+          customerName: data?.data.customerName,
+          customerPhone: data?.data.customerPhone,
+          customerNotes: data?.data.customerNotes,
+          isSelfPickup: data?.data.isSelfPickup,
+          deliveryAddress: data?.data.deliveryAddress,
         }}
         onSubmit={handleSubmit}
       />

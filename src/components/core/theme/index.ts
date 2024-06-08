@@ -5,12 +5,13 @@ import components from './components';
 import headings from './headings';
 
 export const cache = createEmotionCache({
-  key: 'kbz',
+  key: 'mkmk',
   prepend: false,
 });
 
 export const theme: MantineThemeOverride = {
   primaryColor: 'primary',
+  fontFamily: 'Poppins',
   colors,
   headings,
   components,
