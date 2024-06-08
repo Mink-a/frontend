@@ -29,7 +29,9 @@ export function ProfileAvatar() {
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Item icon={<IconLogout size={14} />}>Logout</Menu.Item>
+        <Menu.Item icon={<IconLogout size={14} />} onClick={handleLogout}>
+          Logout
+        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );

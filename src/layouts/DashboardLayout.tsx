@@ -11,6 +11,7 @@ import { ProfileAvatar } from '@components/common';
 import { Sidebar } from '@components/sidebar';
 import { useAuthedRoute } from '@hooks/useAuth';
 import { DarkMode } from '@components/common/Darkmode';
+import { useAuthStore } from '@store/useAuth';
 
 export function DashboardLayout() {
   useAuthedRoute();

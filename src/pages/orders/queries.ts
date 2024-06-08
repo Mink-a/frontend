@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ordersKeys } from '@config/queryKeys';
 import {
   createOrder,
+  deleteOrder,
   getOrder,
   getOrders,
   updateOrder,
@@ -59,12 +60,11 @@ export function useCreateOrder() {
   });
 }
 
-export function useUpdateOrder() {
+export function useUpdateOrder(id: string) {
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
 
   return useMutation({
-    mutationFn: (data: Order) => updateOrder(data),
+    mutationFn: (data: Order) => updateOrder({ id, data }),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ordersKeys.lists(),
@@ -73,7 +73,23 @@ export function useUpdateOrder() {
         color: 'green',
         message: 'Order updated.',
       });
-      navigate('/d/orders');
+    },
+  });
+}
+
+export function useDeleteOrder() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => deleteOrder(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ordersKeys.lists(),
+      });
+      showNotification({
+        color: 'green',
+        message: 'Order deleted.',
+      });
     },
   });
 }

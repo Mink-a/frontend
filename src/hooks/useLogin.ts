@@ -12,14 +12,13 @@ export function useLogin() {
   return useMutation({
     mutationFn: (data: LoginCredentials) => login(data),
     onSuccess: (data) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      const { access_token, refresh_Token, user_name } = data.data.Data;
+      const { access_token, user } = data?.data;
       setAuth(
         {
-          access_token: 'access_token',
+          access_token: access_token,
           refresh_token: 'refresh_Token',
         },
-        'user_name'
+        user.name
       );
       navigate(DASHBOARD_ROUTE);
     },

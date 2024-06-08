@@ -14,33 +14,23 @@ import { useAuthRoute } from '@hooks/useAuth';
 // import { useLogin } from '@hooks/useLogin';
 import { loginSchema } from '@utils/schema';
 import { LoginCredentials } from './types';
-import { useAuthStore } from '@store/useAuth';
+import { useLogin } from '@hooks/useLogin';
 
 export function LoginPage() {
   useAuthRoute();
-  const { setAuth } = useAuthStore.getState();
   const navigate = useNavigate();
-  // const { mutate, isPending } = useLogin();
+  const { mutate, isPending } = useLogin();
 
   const form = useForm({
     initialValues: {
-      username: '',
+      name: '',
       password: '',
     },
     validate: zodResolver(loginSchema),
   });
 
   const handleSubmit = async (values: LoginCredentials) => {
-    // mutate(values);
-    console.log(values);
-    setAuth(
-      {
-        access_token: 'access_token',
-        refresh_token: 'refresh_Token',
-      },
-      values.username
-    );
-    navigate(DASHBOARD_ROUTE);
+    mutate(values);
   };
 
   return (
@@ -67,7 +57,7 @@ export function LoginPage() {
           withAsterisk
           label="Username"
           autoComplete="off"
-          {...form.getInputProps('username')}
+          {...form.getInputProps('name')}
         />
         <PasswordInput
           withAsterisk
@@ -76,7 +66,7 @@ export function LoginPage() {
           autoComplete="off"
           {...form.getInputProps('password')}
         />
-        <Button loading={false} fullWidth mt="xl" type="submit">
+        <Button loading={isPending} fullWidth mt="xl" type="submit">
           Login
         </Button>
       </Paper>

@@ -7,6 +7,7 @@ import i18n from '@config/i18n';
 import { router } from '@config/routes';
 import { ColorSchemeProvider, ColorScheme } from '@mantine/core';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { ModalsProvider } from '@mantine/modals';
 
 function App() {
   const [queryClient] = useState(
@@ -38,9 +39,11 @@ function App() {
         toggleColorScheme={toggleColorScheme}
       >
         <MantineConfig>
-          <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
-          </QueryClientProvider>
+          <ModalsProvider>
+            <QueryClientProvider client={queryClient}>
+              <RouterProvider router={router} />
+            </QueryClientProvider>
+          </ModalsProvider>
         </MantineConfig>
       </ColorSchemeProvider>
     </I18nextProvider>

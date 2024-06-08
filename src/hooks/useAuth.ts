@@ -19,6 +19,7 @@ export function useAuthRoute() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { accessToken } = useAuthStore();
+  console.log({ accessToken });
 
   useEffect(() => {
     if (accessToken) {

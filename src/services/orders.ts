@@ -14,8 +14,8 @@ export function createOrder(data: Order) {
   return axios.post('orders', data);
 }
 
-export function updateOrder(data: Order) {
-  return axios.post('orders', data);
+export function updateOrder({ id, data }: { data: Order; id: string }) {
+  return axios.patch(`orders/${id}`, data);
 }
 
 export function deleteOrder(id: string) {

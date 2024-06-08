@@ -8,12 +8,12 @@ import { Title } from '@mantine/core';
 export function OrdersUpdatePage() {
   const { id = '' } = useParams();
   const { data, isPending: isLoading } = useGetOrder(id);
-  const { mutate, isPending } = useUpdateOrder();
+  const { mutate, isPending } = useUpdateOrder(id);
 
   if (isLoading) return <PageLoading />;
 
   const handleSubmit = (updateData: Order) => {
-    console.log(updateData);
+    console.log({ updateData });
     mutate(updateData);
   };
 

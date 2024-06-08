@@ -44,7 +44,6 @@ const columns: MRT_ColumnDef<Order>[] = [
 
 export function OrdersListPage() {
   const { data, isPending } = useGetOrders();
-  console.log(data?.data);
   const isMobile = useIsMobile();
   return (
     <Card
