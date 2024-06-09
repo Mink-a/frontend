@@ -20,4 +20,15 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: (p) =>
+          p.split('/').reverse()[
+            p.split('/').reverse().indexOf('node_modules') - 1
+          ],
+      },
+    },
+  },
 });

@@ -17,7 +17,10 @@ export function ActionItem({ row }: any) {
       ),
       labels: { confirm: 'Confirm', cancel: 'Cancel' },
       onCancel: () => modals.closeAll(),
-      onConfirm: () => mutate(row.original.id),
+      onConfirm: () => {
+        mutate(row.original.id);
+        modals.closeAll();
+      },
     });
   const handleDelete = () => {
     openModal();

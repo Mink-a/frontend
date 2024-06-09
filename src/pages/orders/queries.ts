@@ -69,6 +69,9 @@ export function useUpdateOrder(id: string) {
       queryClient.invalidateQueries({
         queryKey: ordersKeys.lists(),
       });
+      queryClient.invalidateQueries({
+        queryKey: ordersKeys.detail(id),
+      });
       showNotification({
         color: 'green',
         message: 'Order updated.',
