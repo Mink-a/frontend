@@ -1,68 +1,16 @@
-# Repo Links & Drive Location
+## Description
 
-- [Google Drive Repo for Design File & App](https://drive.google.com/drive/folders/1-QUdAvLQVYupY5D02qGxoTKTS4IxyU9G)
-- [Bitbucket](https://bitbucket.org/kbzscm/svc_portal)
+## Prerequisites
 
-## Getting Started
+- Node.js
+- Docker
+- Docker Compose
 
-First, run the development server:
+## Installation
 
-```bash
-    npm run dev
-```
+Before you start, you need to start the api server first.
 
-## Structure
+copy the `.env.template` file to `.env` and update the environment variables.
 
-```
-App
-└── src
-    ├── assets
-    │   ├── styles
-    │   ├── images
-    │   ├── locales   (i18n locales)
-    │   └── other     (other resource files like fonts, video, audio or etc)
-    ├── components
-    │   ├── core      (core component dir)
-    │   └── other
-    ├── config
-    │   ├── i18n      (react 18n next config)
-    │   ├── router    (router config)
-    │   └── other
-    ├── hooks         (custom hooks)
-    ├── layouts       (layout components)
-    ├── pages
-    │   ├── home
-    │   ├── crud
-    │   │   ├── list
-    │   │   ├── form
-    │   │   │   ├── create
-    │   │   │   └── edit
-    │   │   └── detail
-    │   └── settings
-    ├── services
-    └── utils
-```
-
-## Testing
-
-```
-    npm test
-```
-
-Tests with UI
-
-```
-    npm test:ui
-```
-
-Code coverage
-
-```
-    npm test:cov
-```
-
-Use [Playwright](https://playwright.dev) for e2e tests. Install [vscode ext](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright).
-
-```
-    npm test:e2e
-```
+`npm install` for installing the dependencies.
+`npm run dev` for running the development server.

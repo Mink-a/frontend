@@ -3,9 +3,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  server: {
-    port: 3003,
-  },
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, './src/assets'),
@@ -20,6 +17,16 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  preview: {
+    port: 8080,
+    strictPort: true,
+  },
+  server: {
+    port: 8080,
+    strictPort: true,
+    host: true,
+    origin: 'http://0.0.0.0:8080',
+  },
   build: {
     sourcemap: false,
     rollupOptions: {
