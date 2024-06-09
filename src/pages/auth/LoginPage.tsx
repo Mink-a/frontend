@@ -23,8 +23,8 @@ export function LoginPage() {
 
   const form = useForm({
     initialValues: {
-      name: '',
-      password: '',
+      name: 'admin',
+      password: 'password',
     },
     validate: zodResolver(loginSchema),
   });
